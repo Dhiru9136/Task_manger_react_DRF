@@ -1,0 +1,100 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+}
+
+/* Page layout: no reserved sidebar space, the sidebar is an overlay */
+.tasks-layout {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+}
+
+.tasks-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 32px 32px 90px; /* left padding keeps content clear of the hamburger button */
+  box-sizing: border-box;
+  background: #000000;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.tasks-container h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Loading / error / empty messages */
+.tasks-message {
+  font-size: 16px;
+  color: #a3a3a3;
+}
+
+.tasks-error {
+  color: #f87171; /* lighter red: #dc2626 is too dim on black */
+  font-weight: 600;
+}
+
+/* Cards */
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.task-card {
+  background: #0a0a0a;
+  border: 1px solid #262626;
+  padding: 20px 24px;
+  border-radius: 12px;
+}
+
+.task-card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.task-card p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #a3a3a3;
+}
+
+.task-card strong {
+  color: #f5f5f5;
+}
+
+/* Status / priority pills */
+.task-label {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #333333;
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #e5e5e5;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .tasks-container {
+    padding: 80px 16px 24px; /* clear the hamburger button at the top */
+  }
+
+  .tasks-grid {
+    grid-template-columns: 1fr;
+  }
+}
